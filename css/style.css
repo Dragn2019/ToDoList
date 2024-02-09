@@ -1,0 +1,330 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap);
+
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Poppins";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Poppins";
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+._lock {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться к
+всех классов, содержащих *__container
+К примеру header__container, main__container и т.п.
+Сниппет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+/*
+Файл base.scss – файл базового стиля шаблона ЧФ. Содержит полезные SCSS-шаблоны
+и закомментированные подключения файлов с базовыми стилями разных модулей.
+*/
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg--contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/*
+Файл common.scss – файл стилей для переобщаемых общих блоков конкретного проекта.
+Сначала пуст и подключен к style.scss
+
+Заголовки, общие БЭМ блоки и прочее...
+*/
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+.page {
+  background: -webkit-gradient(linear, left top, right top, from(#faf0cd), to(#fab397));
+  background: linear-gradient(90deg, #faf0cd, #fab397);
+}
+
+.todo__container {
+  width: 100%;
+  max-width: 33.75rem;
+  padding: 1.25rem;
+  margin: 100px auto 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.todo__title {
+  font-size: 2.5rem;
+  margin-bottom: 0.9375rem;
+}
+
+.todo__title img {
+  margin-left: 0.625rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.todo__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: gainsboro;
+  border-radius: 40px;
+  padding-left: 1.25rem;
+  margin-bottom: 1.5625rem;
+}
+
+.todo__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.5625rem;
+  padding: 10px;
+}
+
+.todo__button {
+  border: none;
+  outline: none;
+  padding: 20px 50px;
+  font-size: 1.25rem;
+  background-color: #ff5a0e;
+  border-radius: 40px;
+  color: white;
+}
+
+.todo__button:hover {
+  opacity: 0.8;
+}
+
+.todo__list li {
+  padding: 0rem 0rem 0rem 2.1875rem;
+  font-size: 1.75rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+}
+
+.todo__list li::before {
+  content: "";
+  position: absolute;
+  background-image: url(img/unchecked.png);
+  height: 28px;
+  width: 28px;
+  top: 0px;
+  left: 0px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.todo__list li span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  text-align: center;
+  rotate: 45deg;
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.todo__list li span:hover {
+  color: red;
+}
+
+.todo__list li:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
+.todo__list li.checked {
+  text-decoration: line-through;
+}
+
+.todo__list li.checked::before {
+  content: "";
+  background-image: url(img/checked.png);
+}
